@@ -1,0 +1,25 @@
+yarn add -D @testing-library/react @testing-library/react-hooks jest ts-jest @types/jest @testing-library/jest-dom @testing-library/user-event
+
+package.json
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+
+tsconfig:
+      "esModuleInterop": true,
+
+jest.config.js nhu trong repo
+
+write up Login.test.tsx
+
+error Cannot find module 'react-dom/client' from 'node_modules/@testing-library/react/dist/pure.js'
+  yarn upgrade @testing-library/react@^12.1.4
+
+error with importing css
+  https://jestjs.io/docs/webpack#handling-static-assets
+  package.json
+    "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  }
